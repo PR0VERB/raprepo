@@ -1,0 +1,1 @@
+web gunicorn djforms.wsgi:application --log-file -
