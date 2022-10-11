@@ -2,7 +2,6 @@ from django.http.response import HttpResponse, HttpResponseNotAllowed
 from django.shortcuts import get_object_or_404, redirect, render
 from .forms import BookForm
 from .models import Author, Book
-from datetime import datetime
 
 
 def create_book(request, pk):
@@ -63,11 +62,8 @@ def delete_book(request, pk):
 
 def detail_book(request, pk):
     book = get_object_or_404(Book, id=pk)
-    updated_time = datetime.now()
-    # updated_time.save()
     context = {
-        "book": book,
-        "updated_time": updated_time
+        "book": book
     }
     return render(request, "partials/book_detail.html", context)
 

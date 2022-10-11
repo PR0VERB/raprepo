@@ -4,8 +4,6 @@
     <form method="POST">
         {% csrf_token %}
         {{ form|crispy }}
-        <!-- {{ form }} -->
-
         {% if book %}
         <button type="submit" hx-post="{% url 'update-book' book.id %}"
             class="inline-flex items-center px-3 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
@@ -22,24 +20,4 @@
         </button>
         {% endif %}
     </form>
-
-    <!-- <form method="POST">
-        <input type="hidden" name="csrfmiddlewaretoken" value="OaPnwmDef0mtiBXGyYjMVWrhbgUlBXu4cbX0i29MIhXvE4D25YBEXT1pKsBUgVCb">
-        
-
-<div id="div_id_title" class="mb-3"> <label for="id_title" class="block text-gray-700 text-sm font-bold mb-2">
-            Plan<span class="asteriskField">*</span> </label> <input type="text" name="title" value="Plan 1" maxlength="100" class="textinput focus:outline-none border-gray-300 px-4 block appearance-none border text-gray-700 rounded-lg leading-normal bg-white w-full py-2" required="" id="id_title"> </div> <div id="div_id_number_of_pages" class="mb-3"> <label for="id_number_of_pages" class="block text-gray-700 text-sm font-bold mb-2">
-            Number of Interventions<span class="asteriskField">*</span> </label> <input type="number" name="number_of_pages" value="1" min="0" class="numberinput focus:outline-none border-gray-300 px-4 block appearance-none border text-gray-700 rounded-lg leading-normal bg-white w-full py-2" required="" id="id_number_of_pages"> </div>
-
-        
-        <button type="submit" hx-post="/htmx/book/20/update/" class="inline-flex items-center px-3 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            Submit
-        </button>
-        <button hx-get="/htmx/book/20/" type="button" class="ml-2 inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            Cancel
-        </button>
-        
-    </form> -->
-
-
 </div>
